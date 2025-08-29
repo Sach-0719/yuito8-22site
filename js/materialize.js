@@ -12362,3 +12362,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.modal');
   M.Modal.init(elems);
 });
+$(document).ready(function(){
+  $('.modal').modal();
+  $('.sidenav').sidenav(); // サイドナビ初期化
+});
