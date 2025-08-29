@@ -12366,3 +12366,15 @@ $(document).ready(function(){
   $('.modal').modal();
   $('.sidenav').sidenav(); // サイドナビ初期化
 });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.materialboxed');
+    var instances = M.Materialbox.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+        
