@@ -28,6 +28,9 @@
         <li><a href="https://note.com/sach0719"><i class="material-icons">note</i>Note</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="#!" data-target="modal1" class="search-trigger modal-trigger">
+        <i class="material-icons">search</i>
+      </a>
     </div>
   </ul>
   </nav>
@@ -72,25 +75,42 @@
         <h3>推奨環境</h3>
         <h5>当サイトではChrome、Firefox、Edge、Safariなどのモダンブラウザを推奨しております。Presto時代のOperaやIEではおそらく動きません。</h5></h5>
 
-          <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+              <!-- Modal Trigger -->
+      <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>検索する</h4>
+          <p>検索したいキーワードを入力してください。</p>
+          <script async src="https://cse.google.com/cse.js?cx=d423bc51148ec4c4b"></script>
+          <div class="gcse-search"></div>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">
+            <i class="material-icons">close</i>
+          </a>
+        </div>
+      </div>
 
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
-          
+              
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script src="js/menu.js"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+          
+  </script>
   </body>
 </html>

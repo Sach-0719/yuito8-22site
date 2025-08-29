@@ -4328,6 +4328,13 @@ nav .sidenav-trigger {
   height: 56px;
   margin: 0 18px;
 }
+nav .search-trigger {
+  float: right;
+  position: relative;
+  z-index: 1;
+  height: 56px;
+  margin: 0 18px;
+}
 @media only screen and (min-width: 992px) {
 nav .brand-logo {
   left:10%

@@ -12357,3 +12357,8 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('scroll', highlightTab);
   highlightTab(); // 初期表示用
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.modal');
+  M.Modal.init(elems);
+});
