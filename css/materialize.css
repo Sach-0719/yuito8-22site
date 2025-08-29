@@ -9090,3 +9090,9 @@ input[type=range]::-ms-thumb {
     margin-top: 1.2rem;
   }
 }
+  .qrcode{
+    display: block;         /* 余白を消す */
+    margin: 0 auto;         /* 水平方向に中央寄せ */
+    max-width: 100%;        /* 親要素幅に合わせる */
+    height: auto;           /* 縦横比を維持 */
+  }

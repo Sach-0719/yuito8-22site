@@ -37,11 +37,54 @@
   </nav>
         
         
-  <div class="section no-pad-bot" id="index-banner">
-    <div id="top" class="container">
-      <br><br>
-      <h1 class="header center orange-text">QRコード</h1>
-          <img class="materialboxed" width="650" src="QR_460459.png">
+    <style>
+    qrcode-wrapper {
+      display: flex;
+      justify-content: center;   /* 横中央 */
+      align-items: center;       /* 縦方向中央 */
+      margin-top: -50px;         /* 必要に応じて縦微調整 */
+    }
+
+    .switch-wrapper {
+      display: flex;             /* スイッチと文字を横並び */
+      align-items: center;       /* 縦中央揃え */
+      justify-content: center;
+      gap: 10px;                 /* スイッチと文字の間隔 */
+      margin-top: auto;
+    }
+
+    .switch-text {
+      font-size: 16px;
+      position: static;          /* top/right は不要 */
+      
+    }
+
+  </style>
+<div class="section no-pad-bot" id="index-banner">
+  <div id="top" class="container">
+    <br><br>
+
+    <h1 class="header center orange-text">QRコード</h1>
+    
+    <!-- 画像にIDを追加 -->
+    <img id="qrcodeImg" class="materialboxed qrcode" width="650" src="QR.png" alt="QRコード">
+
+    <div class="qrcode-wrapper">
+      <div class="switch-wrapper">
+        <div class="switch">
+          <label>
+            <!-- スイッチにIDを追加 -->
+            <input type="checkbox" id="toggleSwitch">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <span class="switch-text">アイコンを表示</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+          <a href="QR.png" download id="downloadbutton" class="waves-effect waves-light btn-large qrcode" style="top: 10px;"><i class="material-icons left">download</i>QRコードをダウンロード</a>
               <!-- Modal Trigger -->
       <!-- Modal Structure -->
       <div id="modal1" class="modal">
@@ -78,5 +121,20 @@
   });
           
   </script>
+  <script>
+  const toggle = document.getElementById('toggleSwitch');
+  const img = document.getElementById('qrcodeImg');
+
+  toggle.addEventListener('change', () => {
+    if (toggle.checked) {
+      img.src = "QR_icon.png";   // ON のときの画像
+      downloadbutton.href = "QR_icon.png"
+    } else {
+      img.src = "QR.png"; // OFF のときの画像
+      downloadbutton.href = "QR_.png"
+    }
+  });
+  </script>
+
   </body>
 </html>
